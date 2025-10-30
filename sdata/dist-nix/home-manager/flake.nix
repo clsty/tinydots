@@ -34,7 +34,6 @@
           extraSpecialArgs = { inherit nixgl home_attrs; };
           modules = [ 
             ./home.nix
-            #./hypr.nix
           ];
         };
       };

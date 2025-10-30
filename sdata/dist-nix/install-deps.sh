@@ -93,7 +93,7 @@ function hm_deps(){
     --extra-experimental-features nix-command \
     --extra-experimental-features flakes
   cd $REPO_ROOT
-  x git reset "${SETUP_USERNAME_NIXFILE}"
+  x git rm -f "${SETUP_USERNAME_NIXFILE}"
 }
 
 ##################################################
