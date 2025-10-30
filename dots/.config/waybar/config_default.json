@@ -1,0 +1,149 @@
+{
+  "height": 40, // Waybar height (to be removed for auto height)
+  "spacing": 5, // Gaps between modules (4px)
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "10": "X",
+      "urgent": "",
+    }
+  },
+  "hyprland/window#class": {
+    "format": "<span color='#fff'> {class} </span>",
+    "separate-outputs": true,
+  },
+  "hyprland/window": {
+    "format": "<span color='#fff'> {title} </span>",
+    "separate-outputs": true,
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%m%d󰸗%H:%M:%S}",
+    "format-alt": " {:%Y 󰸗 %m%d}",
+    "tooltip-format": "\n<span size='12pt' font='DroidSansM Nerd Font Mono'>{calendar}</span>",
+    "locale": "en_US.UTF-8",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": "{}%",
+    "max-length": 10,
+    "on-click": "",
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{}%",
+    "format-alt": "{used:0.1f}G",
+    "max-length": 10,
+  },
+  "backlight": {
+    "format": "{icon}{percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    "on-click": "",
+  },
+  "network": {
+    "format-wifi": "󰖩{signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰌙",
+    "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "{volume}%",
+    "format-bluetooth-muted": "󰝟",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "bluetooth": {
+    "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+    "format": "󰂯{status}",
+  },
+
+  "battery": {
+    //"bat": "BAT0",
+    //"adapter": "ADP0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "max-length": 20,
+    "format": "{icon}{capacity}%",
+    "format-warning": "{icon}{capacity}%",
+    "format-critical": "{icon}{capacity}%",
+    "format-charging": "󰂄{capacity}%",
+    "format-plugged": "󰚥{capacity}%",
+    "format-alt": "{icon}{time}",
+    "format-full": "󰁹{capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+
+  "custom/power-menu#top": {
+    "format": " <span color='#6a92d7'>󰐥 </span>",
+    "on-click": "ROFI_LOCATION=3 ~/.config/rofi/powermenu/run.sh",
+  }, 
+  "custom/power-menu#bottom": {
+    "format": " <span color='#6a92d7'>󰐥 </span>",
+    "on-click": "ROFI_LOCATION=5 ~/.config/rofi/powermenu/run.sh",
+  },
+  "custom/launcher": {
+    "format": " <span color='#6a92d7'> </span>",
+    "on-click": "$HOME/.config/rofi/launcher/run.sh drun",
+    "on-click-right": "$HOME/.config/rofi/launcher/run.sh window",
+  },
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " 󰂚<span foreground='red'></span>",
+      "none": " 󰂚 ",
+      "dnd-notification": " 󰂛<span foreground='red'></span>",
+      "dnd-none": " 󰂛 ",
+      "inhibited-notification": " 󰂜<span foreground='red'></span> ",
+      "inhibited-none": " 󰂜 ",
+      "dnd-inhibited-notification": " 󰪑<span foreground='red'></span>",
+      "dnd-inhibited-none": " 󰪑 "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}

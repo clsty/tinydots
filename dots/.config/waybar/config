@@ -1,0 +1,18 @@
+[
+{
+	"layer": "top",
+	"position": "top",
+  "margin-top": 6,
+  "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+	"output": ["eDP-1"],
+  "modules-left": ["custom/launcher", "battery", "cpu", "memory", "bluetooth", "network", "hyprland/workspaces","hyprland/window#class"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["tray", "backlight", "pulseaudio", "clock", "custom/notification", "custom/power-menu#top"],
+
+	"include": [
+		"~/.config/waybar/config_default.json",
+	],
+},
+]
