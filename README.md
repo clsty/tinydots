@@ -13,6 +13,11 @@ This project is:
 _Note: Configuration files are **not** managed by Home-manager for those customed to the traditional way managing dotfiles, except for several files under `~/.config/fontconfig/conf.d/`._
 
 ## Installation
+Clone this repo:
+```
+git clone --depth=1 https://github.com/clsty/tinydots
+cd tinydots
+```
 Run `./setup install` to install.
 - `zsh` and `swaylock` are still installed by system PM (Package Manager) due to limitation of Nix on non-NixOS distros.
 - `curl` and `git` are also needed to be installed by system PM, but this is actually that you need `curl` and `git` for the install script itself.
