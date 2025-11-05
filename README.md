@@ -12,6 +12,9 @@ This project is:
 
 _Note: Configuration files are **not** managed by Home-manager for those customed to the traditional way managing dotfiles, except for several files under `~/.config/fontconfig/conf.d/`._
 
+<img width="1800" height="1200" alt="A simple screenshot" src="https://github.com/user-attachments/assets/20e4ee84-3c6e-4364-8cb4-318918e608ef" />
+
+
 ## Installation
 Clone this repo:
 ```
