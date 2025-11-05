@@ -47,6 +47,25 @@ case $1 in
   *)printf "${STY_RED}Unknown subcommand \"$1\".${STY_RST}\n";showhelp_global;exit 1;;
 esac
 #####################################################################################
+start_ts="$(date +%s)"
+function print_runtime() {
+  local end_ts
+  end_ts="$(date +%s)"
+  local elapsed=$((end_ts - start_ts))
+  local days=$((elapsed / 86400))
+  local hours=$(( (elapsed % 86400) / 3600 ))
+  local minutes=$(( (elapsed % 3600) / 60 ))
+  local seconds=$(( elapsed % 60 ))
+  local human=""
+  if [ "$days" -gt 0 ]; then human="${human}${days}d "; fi
+  if [ "$hours" -gt 0 ]; then human="${human}${hours}h "; fi
+  if [ "$minutes" -gt 0 ]; then human="${human}${minutes}m "; fi
+  human="${human}${seconds}s"
+  echo -e "\e[34m$me: Total runtime: $human (${elapsed} seconds)\e[0m"
+}
+trap print_runtime EXIT
+
+#####################################################################################
 if [[ -f "${SUBCMD_DIR}/options.sh" ]];
   then source "${SUBCMD_DIR}/options.sh"
 fi
