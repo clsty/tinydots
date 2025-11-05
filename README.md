@@ -14,7 +14,6 @@ _Note: Configuration files are **not** managed by Home-manager for those custome
 
 <img width="1800" height="1200" alt="A simple screenshot" src="https://github.com/user-attachments/assets/20e4ee84-3c6e-4364-8cb4-318918e608ef" />
 
-
 ## Installation
 Clone this repo:
 ```
@@ -40,6 +39,8 @@ Basic keybinds:
 - `Super`+`/`: App launcher.
 - `Super`+`V`: Clipboard history.
 - `Super`+`F1`: Lock screen.
+- `Super`+`Delete`: Power menu.
+- `Super`+`Ctrl`+`[`/`]`: Toggle left/right panel.
 
 Navigate:
 - `Super`+`H`/`J`/`K`/`L`: Switch window focus.
