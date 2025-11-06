@@ -31,6 +31,8 @@
       ## inetutils: provides hostname, ifconfig, ping, etc.
       ## libnotify: provides notify-send
       jq rsync inetutils libnotify
+      ## Filemanager
+      yazi
       ## Media related
       brightnessctl playerctl pavucontrol
       ## Recording/Screenshot/Color picker
@@ -39,10 +41,12 @@
       wl-clipboard copyq rofimoji cliphist
       ## Widget
       rofi-wayland fuzzel waybar
+      ## Connection
+      blueman networkmanager
       ## Notification
       swaynotificationcenter
       ## Terminal and shell
-      foot starship
+      foot oh-my-zsh zsh-powerlevel10k
 
       ##### Fonts/Icons/Cursors/Decoration #####
       fontconfig
@@ -55,14 +59,14 @@
       ## For fallback
       noto-fonts noto-fonts-emoji
       ## Used with fuzzel
-      candy-icons
+      papirus-icon-theme
       ## Cursor theme
       bibata-cursors
       ## Wallpaper
       swww
 
       ##### Other basic things #####
-      dbus xorg.xlsclients blueman networkmanager hypridle
+      dbus xorg.xlsclients hypridle glib
     ]
     ++ [
     ##### Ones needing GPU #####

@@ -15,12 +15,12 @@ _Note: Configuration files are **not** managed by Home-manager for those custome
 <img width="1800" height="1200" alt="A simple screenshot" src="https://github.com/user-attachments/assets/20e4ee84-3c6e-4364-8cb4-318918e608ef" />
 
 ## Installation
-Clone this repo:
+Clone this repo and run `./setup install` to install:
+```bash
+git clone --depth=1 https://github.com/clsty/tinydots && cd tinydots && ./setup install
 ```
-git clone --depth=1 https://github.com/clsty/tinydots
-cd tinydots
-```
-Run `./setup install` to install.
+
+Notes:
 - `zsh` and `swaylock` are still installed by system PM (Package Manager) due to limitation of Nix on non-NixOS distros.
 - `curl` and `git` are also needed to be installed by system PM, but this is actually that you need `curl` and `git` for the install script itself.
 
@@ -58,7 +58,6 @@ For other keybinds see `~/.config/hypr/hyprland/keybinds.conf`.
 ## Credits
 Thanks for all developers and contributors of the FOSS projects involved in this repo. Some of them are listed below:
 - Zsh
-- Starship
 - Foot
 - Hyprland
 - Waybar
