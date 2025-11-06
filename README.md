@@ -29,12 +29,12 @@ Run `./setup -h` for more subcommands.
 Run `./setup <subcommand> -h` for more options.
 
 ## Usage
-To launch Hyprland, login on a `tty` and run `hyprland;exit`.
+The install script will set Zsh as default shell, and Hyprland will autostart after the login on `tty1`.
 
-If you use Zsh as default shell then Hyprland will autostart after the login on `tty1`.
+Alternatively, to launch Hyprland, login on a `tty` and run `hyprland;exit`.
 
 Basic keybinds:
-- `Super`+`Return`: Launch terminal (foot).
+- `Super`+`Return`: Launch terminal.
 - `Super`+`X`: Close window.
 - `Super`+`/`: App launcher.
 - `Super`+`V`: Clipboard history.
