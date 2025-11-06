@@ -2,7 +2,7 @@
 
 This project is:
 - A starter or template for beginner to use Nix on non-NixOS distro.
-- A lightweight repo which setups basic desktop environment (based on Hyprland and waybar) quickly.
+- A lightweight repo which setups minimal desktop environment (based on Hyprland and waybar) quickly.
 - An elegant solution for Debian stable users (e.g. the repo owner, @clsty) who want to use Hyprland.
 
 ## Features
@@ -28,10 +28,20 @@ Run `./setup -h` for more subcommands.
 
 Run `./setup <subcommand> -h` for more options.
 
-## Usage
+## Launch
 The install script will set Zsh as default shell, and Hyprland will autostart after the login on `tty1`.
 
 Alternatively, to launch Hyprland, login on a `tty` and run `hyprland;exit`.
+
+## Usage
+
+Note:
+- `<num>`: Number keys from 0 to 9
+- `<arrow>`: Keys representing 4 directions (supports vim-like "HJKL"):
+  - Left: `←` or `H`
+  - Right: `→` or `L`
+  - Up: `↑` or `K`
+  - Down: `↓` or `J`
 
 Basic keybinds:
 - `Super`+`Return`: Launch terminal.
@@ -43,13 +53,13 @@ Basic keybinds:
 - `Super`+`Ctrl`+`[`/`]`: Toggle left/right panel.
 
 Navigate:
-- `Super`+`H`/`J`/`K`/`L`: Switch window focus.
+- `Super`+`<arrow>`: Switch window focus.
 - `Super`+`<num>`: Switch to workspace `<num>`.
 - `Super`+`[`/`]`: Switch to prev/next workspace.
 
 Control window:
-- `Super`+`Shift`+`H`/`J`/`K`/`L`: Move window position.
-- `Super`+`Alt`+`H`/`J`/`K`/`L`: Resize window.
+- `Super`+`Shift`+`<arrow>`: Move window position.
+- `Super`+`Alt`+`<arrow>`: Resize window.
 - `Super`+`;`: Change window split orientation.
 - `Super`+`Shift`+`<num>`: Move window to workspace `<num>`.
 
