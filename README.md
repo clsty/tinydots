@@ -35,13 +35,14 @@ Alternatively, to launch Hyprland, login on a `tty` and run `hyprland;exit`.
 
 ## Usage
 
-Note:
-- `<num>`: Number keys from 0 to 9
-- `<arrow>`: Keys representing 4 directions (supports vim-like "HJKL"):
-  - Left: `←` or `H`
-  - Right: `→` or `L`
-  - Up: `↑` or `K`
-  - Down: `↓` or `J`
+> [!TIP]
+> Notations used below:
+> - `<num>`: Number keys from 0 to 9
+> - `<arrow>`: Keys representing 4 directions (supports vim-like "HJKL"):
+>   - Left: `←` or `H`
+>   - Right: `→` or `L`
+>   - Up: `↑` or `K`
+>   - Down: `↓` or `J`
 
 Basic keybinds:
 - `Super`+`Return`: Launch terminal.
