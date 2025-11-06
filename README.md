@@ -58,7 +58,6 @@ For other keybinds see `~/.config/hypr/hyprland/keybinds.conf`.
 ## Credits
 Thanks for all developers and contributors of the FOSS projects involved in this repo. Some of them are listed below:
 - Zsh
-- Starship
 - Foot
 - Hyprland
 - Waybar
