@@ -5,14 +5,14 @@ This project is:
 - A lightweight repo which setups minimal desktop environment (based on Hyprland and waybar) quickly.
 - An elegant solution for Debian stable users (e.g. the repo owner, @clsty) who want to use Hyprland.
 
+<img width="1800" height="1200" alt="Screenshot" src="https://github.com/user-attachments/assets/f191b4f0-a891-48a2-9164-bcbfcaa369a3" />
+
 ## Features
 - Idempotent install script.
 - Powered by Nix with Home-manager to achieve cross distro.
   - Tested on Debian 13.
 
 _Note: Configuration files are **not** managed by Home-manager for those customed to the traditional way managing dotfiles, except for several files under `~/.config/fontconfig/conf.d/`._
-
-<img width="1800" height="1200" alt="A simple screenshot" src="https://github.com/user-attachments/assets/20e4ee84-3c6e-4364-8cb4-318918e608ef" />
 
 ## Installation
 Clone this repo and run `./setup install` to install:
