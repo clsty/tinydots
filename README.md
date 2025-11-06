@@ -3,7 +3,7 @@
 This project is:
 - A starter or template for beginner to use Nix on non-NixOS distro.
 - A lightweight repo which setups basic desktop environment (based on Hyprland and waybar) quickly.
-- An elegant solution for Debian stable users (e.g. the repo owner, @clsty) who still want to use Hyprland.
+- An elegant solution for Debian stable users (e.g. the repo owner, @clsty) who want to use Hyprland.
 
 ## Features
 - Idempotent install script.
@@ -55,12 +55,17 @@ Control window:
 
 For other keybinds see `~/.config/hypr/hyprland/keybinds.conf`.
 
+Run `yazi` to open filemanager.
+
 ## Credits
 Thanks for all developers and contributors of the FOSS projects involved in this repo. Some of them are listed below:
 - Zsh
+- Oh-my-zsh
+- Powerlevel10k
 - Foot
 - Hyprland
 - Waybar
 - Swaylock
 - Nix
 - Home-manager
+- Yazi

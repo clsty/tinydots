@@ -70,7 +70,7 @@ for i in $(find dots/.config/ -mindepth 1 -maxdepth 1 ! -name 'hypr' -exec basen
   elif [ -f "dots/.config/$i" ];then warning_rsync_normal; v rsync -av "dots/.config/$i" "$XDG_CONFIG_HOME/$i"
   fi
 done
-for i in .zshrc;do
+for i in .zshrc .p10k.zsh;do
   warning_rsync_normal; v rsync -av "dots/$i" "$HOME/$i"
 done
 

@@ -60,8 +60,6 @@
       noto-fonts noto-fonts-emoji
       ## Used with fuzzel
       papirus-icon-theme
-      ## Cursor theme
-      bibata-cursors
       ## Wallpaper
       swww
 
