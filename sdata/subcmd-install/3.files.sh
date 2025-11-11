@@ -50,7 +50,8 @@ v auto_update_git_submodule
 
 # In case some dirs does not exists
 v mkdir -p $XDG_BIN_HOME $XDG_CACHE_HOME $XDG_CONFIG_HOME $XDG_DATA_HOME
-if test -f "${XDG_CACHE_HOME}/.tinydots-installed"; then
+firstrun_file="${XDG_CACHE_HOME}/.tinydots-installed"
+if test -f "${firstrun_file}"; then
   firstrun=false
 else
   firstrun=true
@@ -116,7 +117,7 @@ copy_dir_s_t \
   "dots/.config/hypr/custom" \
   "${XDG_CONFIG_HOME}/hypr/custom"
 
-v touch "${XDG_CACHE_HOME}/.tinydots-installed"
+v touch "${firstrun_file}"
 
 # Prevent hyprland from not fully loaded
 sleep 1
