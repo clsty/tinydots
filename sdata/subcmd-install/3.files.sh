@@ -43,6 +43,34 @@ function auto_backup_configs(){
   # Backup when $BACKUP_DIR does not exist
   if [[ ! -d "$BACKUP_DIR" ]]; then backup_configs;fi
 }
+function copy_file_s_t(){
+  local s=$1
+  local t=$2
+  if [ -f $t ];then
+    echo -e "${STY_YELLOW}[$0]: \"$t\" already exists.${STY_RST}"
+    if $firstrun;then
+      echo -e "${STY_BLUE}[$0]: It seems to be the firstrun.${STY_RST}"
+      v mv $t $t.old
+      v cp -f $s $t
+    else
+      echo -e "${STY_BLUE}[$0]: It seems not a firstrun.${STY_RST}"
+      v cp -f $s $t.new
+    fi
+  else
+    echo -e "${STY_GREEN}[$0]: \"$t\" does not exist yet.${STY_RST}"
+    v cp $s $t
+  fi
+}
+function copy_dir_s_t(){
+  local s=$1
+  local t=$2
+  if [ -d $t ];then
+    echo -e "${STY_BLUE}[$0]: \"$t\" already exists, will not do anything.${STY_RST}"
+  else
+    echo -e "${STY_YELLOW}[$0]: \"$t\" does not exist yet.${STY_RST}"
+    v rsync -av --delete $s/ $t/
+  fi
+}
 
 #####################################################################################
 showfun auto_update_git_submodule
@@ -78,24 +106,6 @@ done
 # For Hyprland
 x mkdir -p "$XDG_CONFIG_HOME"/hypr
 warning_rsync_delete; v rsync -av --delete dots/.config/hypr/hyprland/ "$XDG_CONFIG_HOME"/hypr/hyprland/
-function copy_file_s_t(){
-  local s=$1
-  local t=$2
-  if [ -f $t ];then
-    echo -e "${STY_YELLOW}[$0]: \"$t\" already exists.${STY_RST}"
-    if $firstrun;then
-      echo -e "${STY_BLUE}[$0]: It seems to be the firstrun.${STY_RST}"
-      v mv $t $t.old
-      v cp -f $s $t
-    else
-      echo -e "${STY_BLUE}[$0]: It seems not a firstrun.${STY_RST}"
-      v cp -f $s $t.new
-    fi
-  else
-    echo -e "${STY_GREEN}[$0]: \"$t\" does not exist yet.${STY_RST}"
-    v cp $s $t
-  fi
-}
 copy_file_s_t \
   "dots/.config/hypr/hyprland.conf" \
   "${XDG_CONFIG_HOME}/hypr/hyprland.conf"
@@ -103,16 +113,6 @@ copy_file_s_t \
   "dots/.config/hypr/hypridle.conf" \
   "${XDG_CONFIG_HOME}/hypr/hypridle.conf"
 
-function copy_dir_s_t(){
-  local s=$1
-  local t=$2
-  if [ -d $t ];then
-    echo -e "${STY_BLUE}[$0]: \"$t\" already exists, will not do anything.${STY_RST}"
-  else
-    echo -e "${STY_YELLOW}[$0]: \"$t\" does not exist yet.${STY_RST}"
-    v rsync -av --delete $s/ $t/
-  fi
-}
 copy_dir_s_t \
   "dots/.config/hypr/custom" \
   "${XDG_CONFIG_HOME}/hypr/custom"
